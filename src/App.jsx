@@ -9,29 +9,32 @@ import ViewBooks from './components/ViewBooks';
 import EditBook from './components/EditBook';
 import BookDetails from './components/BookDetails';
 import BorrowBook from './components/BorrowBook';
-import Login from './components/Login';
-import Signin from './components/Signin'; // <-- added this!
+import Login from './components/BorrowBook';
+import Signin from './components/BorrowBook';
 
 function App() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get('https://fakerapi.it/api/v1/books?_quantity=10')
+    axios.get('https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=10')
       .then(res => {
-        const apiBooks = res.data.data.map(book => ({
-          id: Math.random().toString(36).substr(2, 9),
-          title: book.title,
-          author: book.author,
-          genre: book.genre,
-          published: new Date(book.published).getFullYear(),
-          borrowed: false,
-          borrowedBy: '',
-          borrowDate: ''
-        }));
-        setBooks(apiBooks);
+        const booksData = res.data.items.map(item => {
+          const info = item.volumeInfo;
+          return {
+            id: item.id,
+            title: info.title,
+            author: info.authors ? info.authors[0] : "Unknown",
+            genre: info.categories ? info.categories[0] : "Unknown",
+            published: info.publishedDate ? parseInt(info.publishedDate.substring(0, 4)) : "N/A",
+            borrowed: false,
+            borrowedBy: '',
+            borrowDate: ''
+          };
+        });
+        setBooks(booksData);
       })
       .catch(err => console.error('Failed to fetch books:', err));
-  }, []);
+  }, []); // Empty array ensures it runs once on mount
 
   return (
     <>
