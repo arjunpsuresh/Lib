@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .body{
+  
+  
+    .special-gothic-expanded-one-regular {
+            font-family: "Special Gothic Expanded One", sans-serif;
+        }
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:url('/book.png');
+    mask-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+  }
+
+  
+.wrapper code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+
+  
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

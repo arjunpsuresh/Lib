@@ -46,51 +46,21 @@ const Home = () => {
               "A room without books is like a body without a soul."
             </Typography>
 
-            <Stack direction="row" spacing={3} justifyContent="center">
-              <Button
-                component={Link}
-                to="/add"
-                variant="contained"
-                size="large"
-                sx={{
-                  background: 'linear-gradient(45deg, #6b5b95, #b8a9c9)',
-                  borderRadius: 3,
-                  transition: 'transform 0.3s ease',
-                  '&:hover': { transform: 'scale(1.05)' },
-                }}
-              >
-                Add Book
-              </Button>
-              <Button
-                component={Link}
-                to="/view"
-                variant="outlined"
-                size="large"
-                sx={{
-                  color: 'white',
-                  borderColor: 'white',
-                  borderRadius: 3,
-                  transition: 'transform 0.3s ease',
-                  '&:hover': { transform: 'scale(1.05)', backgroundColor: 'rgba(255,255,255,0.2)' },
-                }}
-              >
-                View Books
-              </Button>
-              <Button
-                component={Link}
-                to="/borrow"
-                variant="contained"
-                color="success"
-                size="large"
-                sx={{
-                  borderRadius: 3,
-                  transition: 'transform 0.3s ease',
-                  '&:hover': { transform: 'scale(1.05)' },
-                }}
-              >
-                Borrow / Return
-              </Button>
-            </Stack>
+            {/* Only Login Button */}
+            <Button
+              component={Link}
+              to="/login"
+              variant="contained"
+              size="large"
+              sx={{
+                background: 'linear-gradient(45deg, #6b5b95, #b8a9c9)',
+                borderRadius: 3,
+                transition: 'transform 0.3s ease',
+                '&:hover': { transform: 'scale(1.05)' },
+              }}
+            >
+              Login
+            </Button>
           </Box>
         </Fade>
       </Box>

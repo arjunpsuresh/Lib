@@ -1,0 +1,51 @@
+.Toastify__toast-container {
+    position: fixed !important;
+    top: 1em !important;
+    right: 1em !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    z-index: 9999 !important;
+    pointer-events: none;
+  }
+
+
+
+
+/* Basic styling needed for react-toastify */
+
+  
+  .Toastify__toast-container--top-right {
+    top: 1em;
+    right: 1em;
+  }
+  
+  .Toastify__toast {
+    pointer-events: auto;
+    background: #333;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Toastify__toast--success {
+    background: #28a745;
+  }
+  
+  .Toastify__toast--error {
+    background: #dc3545;
+  }
+  
+  .Toastify__toast-body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Close button inside toast */
+  .Toastify__close-button {
+    display: none;
+    
+  }
+  
